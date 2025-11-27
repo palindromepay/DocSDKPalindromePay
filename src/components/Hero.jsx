@@ -15,7 +15,7 @@ const code = `requirements {
   tsc --version >= 5.0.0
 }
 
-npm install @@palindromecryptoescrow/sdk
+npm install @palindromecryptoescrow/sdk
 `
 
 const tabs = [{ name: 'Start here', isActive: true }]
