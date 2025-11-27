@@ -46,7 +46,6 @@ import { bscTestnet } from 'viem/chains';
 
 export const createPalindromeSDK = (walletClient?: WalletClient) => {
   return new PalindromeEscrowSDK({
-    contractAddress: process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as `0x${string}`,
     publicClient,
     walletClient: walletClient ?? undefined,
     chain: bscTestnet,

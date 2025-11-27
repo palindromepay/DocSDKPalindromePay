@@ -31,9 +31,7 @@ npm install @palindromecryptoescrow/sdk
   Create a .env file
 
 ```js
-REACT_APP_SUBGRAPH_URL=https://api.studio.thegraph.com/query/121986/subgraph-palindrome-finance/version/latest 
-REACT_APP_CONTRACT_ADDRESS=0xc7563c8a19689a51058764e1654a092d8037d1e5
-REACT_APP_USDT_TOKEN=0x16ba9f1ee0ffbc4b554ce4c445e73d5da22d0f55
+REACT_APP_USDT_TOKEN=0x337610d27c682E347C9cD60BD4b3b107C9d34dDd //this is USDT Faucet on BSC-Testnet 
 ```
 {% /callout %}
 
