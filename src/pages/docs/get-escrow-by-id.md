@@ -49,4 +49,3 @@ try {
 - You’re building transaction logic that depends on current contract state
 
 **Tip** → For a cleaner, typed version use `getEscrowByIdParsed()` instead.
-```
