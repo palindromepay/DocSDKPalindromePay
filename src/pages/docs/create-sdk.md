@@ -7,21 +7,6 @@ Before you can use any of the SDK functions, you need to properly initialize and
 
 ## Setup & Initialization
 
-#### Apollo Client (Subgraph queries)
-
-```ts
-// config/apollo.ts
-import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
-
-const SUBGRAPH_URL =
-  process.env.NEXT_PUBLIC_SUBGRAPH_URL ||
-  'https://api.thegraph.com/subgraphs/name/yourname/palindrome-bsc-testnet';
-
-export const apolloClient = new ApolloClient({
-  link: new HttpLink({ uri: SUBGRAPH_URL }),
-  cache: new InMemoryCache(),
-});
-```
 
 Public Client (on-chain reads)
 ```ts
@@ -49,7 +34,6 @@ export const createPalindromeSDK = (walletClient?: WalletClient) => {
     publicClient,
     walletClient: walletClient ?? undefined,
     chain: bscTestnet,
-    apollo: apolloClient,
   });
 };
 ```
