@@ -6,6 +6,12 @@ description: Palindrome Finance is a crypto payment system with escrow service f
 
 Palindrome Finance is a crypto payment system with escrow service focused on secure cryptocurrency transactions, providing solutions that enhance trust and protection in digital payments. Palindrome Finance offers an SDK primarily designed for developers who want more control and customization. Additionally, we provide easy-to-integrate widgets that connect to Palindrome's Checkout System, enabling simple setup and effortless handling for customers.
 
+You have two integration options:
+
+**SDK** – for more advanced use cases and maximum flexibility.
+
+**Widget** – easy to integrate with just a few lines of code, using the Palindrome Finance Checkout system.”
+
 Our SDK can be integrated into the following kinds of platforms, allowing users to seamlessly add crypto-based escrow payments to their existing workflows:
 
 - **E-commerce platforms such as Shopify and WooCommerce**
