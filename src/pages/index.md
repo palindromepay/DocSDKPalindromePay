@@ -133,7 +133,7 @@ Place this in product.liquid or a product section:
     alt="Palindrome"
     style="width: 20px; height: 20px; border-radius: 3px; flex-shrink: 0;"
   />
-  Pay with Crypto (Escrow)
+  Palindrome Pay
 </button>
 
 <script 
