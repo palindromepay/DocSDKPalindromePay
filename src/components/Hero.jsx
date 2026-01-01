@@ -127,7 +127,7 @@ export function Hero() {
                   </g>
                 </svg>
                 <p className="m-0 font-display text-xl text-amber-900 dark:text-amber-500">
-                  BSC Testnet!
+                  Testnet!
                 </p>
               </div>
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
