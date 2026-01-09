@@ -4,8 +4,6 @@ title: Enums & Types
 sidebar_label: Enums
 ---
 
-# Enums & Types
-
 This page documents all TypeScript enums and key interfaces used in the Palindrome Escrow SDK.
 
 ---

@@ -46,9 +46,9 @@ export function Hero() {
               priority
             />
             <div className="relative">
-              <h1 className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
+              <p className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
                 Palindrome Crypto Pay SDK
-              </h1>
+              </p>
 
               <h2 className="mt-3 text-2xl tracking-tight text-slate-400">
                 With Built-in Escrow Service
