@@ -5,14 +5,14 @@ description: "Palindrome Crypto Pay: Read raw escrow data directly from the smar
 
 ```ts
 async getEscrowById(escrowId: bigint): Promise<any>
+```
 
-Fetches the raw escrow tuple straight from the contract’s getEscrow(uint256) view function. Returns data exactly as stored on-chain (no subgraph indexing delay).
+Fetches the raw escrow tuple straight from the contract's getEscrow(uint256) view function. Returns data exactly as stored on-chain (no subgraph indexing delay).
 
-Parameters
-escrowId: bigint – The numeric ID of the escrow
+#### Parameters
+- `escrowId: bigint` – The numeric ID of the escrow
 
-
-**Returns**  
+#### Returns
 Raw array/tuple with values in contract order (token, buyer, seller, arbiter, amount, depositTime, maturityTime, nonce, state, buyerCancelRequested, sellerCancelRequested)
 
 ```ts
