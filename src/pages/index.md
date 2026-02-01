@@ -6,10 +6,11 @@ description: Add crypto payments + escrow to Shopify, real estate, or booking ap
 
 ## Introduction
 
-Palindrome Pay is an open-source SDK for building escrow functionality into decentralized applications using smart contracts with built-in escrow and multisig wallet.
+The Palindrome Pay SDK enables developers to integrate crypto payments into applications using open-source smart contracts with built-in escrow and multisig wallet support.
 
 - **Non-custodial**: Funds are held by the smart contract, not by Palindrome Pay
 - **User-to-user**: Direct peer-to-peer transactions between buyer and seller
+- **Software fee**: A 1% fee applies to transactions for use of the software, only if the deal succeeds
 
 ---
 
