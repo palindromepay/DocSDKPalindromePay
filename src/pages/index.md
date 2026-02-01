@@ -10,7 +10,7 @@ The Palindrome Pay SDK enables developers to integrate crypto payments into appl
 
 - **Non-custodial**: Funds are held by the smart contract, not by Palindrome Pay
 - **User-to-user**: Direct peer-to-peer transactions between buyer and seller
-- **Software fee**: A 1% fee applies to transactions for use of the software, only if the deal succeeds
+- **Software fee**: A 1% fee applies for SDK usage, charged only on successful deals
 
 ---
 
