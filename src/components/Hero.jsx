@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import Image from 'next/future/image'
+// Using regular img for static export compatibility
 import clsx from 'clsx'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 
@@ -36,14 +36,12 @@ export function Hero() {
       <div className="py-16 sm:px-2 lg:relative lg:px-0 lg:py-20">
         <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 lg:max-w-8xl lg:grid-cols-2 lg:px-8 xl:gap-x-16 xl:px-12">
           <div className="relative z-10 md:text-center lg:text-left">
-            <Image
+            <img
               className="absolute bottom-full right-full -mb-56 -mr-72 opacity-50"
-              src={blurCyanImage}
+              src={blurCyanImage.src}
               alt="Crypto escrow payment platform background"
               width={530}
               height={530}
-              unoptimized
-              priority
             />
             <div className="relative">
               <p className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
@@ -148,23 +146,19 @@ export function Hero() {
               <HeroBackground className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-0 lg:translate-x-0 lg:translate-y-[-60%]" />
             </div>
             <div className="relative">
-              <Image
+              <img
                 className="absolute -right-64 -top-64"
-                src={blurCyanImage}
+                src={blurCyanImage.src}
                 alt="Blockchain escrow SDK decorative element"
                 width={530}
                 height={530}
-                unoptimized
-                priority
               />
-              <Image
+              <img
                 className="absolute -bottom-40 -right-44"
-                src={blurIndigoImage}
+                src={blurIndigoImage.src}
                 alt="Secure crypto payment escrow service visual"
                 width={567}
                 height={567}
-                unoptimized
-                priority
               />
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-sky-300 via-sky-300/70 to-blue-300 opacity-10 blur-lg" />
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-sky-300 via-sky-300/70 to-blue-300 opacity-10" />

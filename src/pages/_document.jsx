@@ -4,25 +4,22 @@ const themeScript = `
   let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
   function updateTheme(savedTheme) {
-    let theme = 'system'
+    let theme = 'dark'
     try {
       if (!savedTheme) {
         savedTheme = window.localStorage.theme
       }
-      if (savedTheme === 'dark') {
-        theme = 'dark'
-        document.documentElement.classList.add('dark')
-      } else if (savedTheme === 'light') {
+      if (savedTheme === 'light') {
         theme = 'light'
         document.documentElement.classList.remove('dark')
-      } else if (mediaQuery.matches) {
-        document.documentElement.classList.add('dark')
       } else {
-        document.documentElement.classList.remove('dark')
+        // Default to dark mode
+        theme = 'dark'
+        document.documentElement.classList.add('dark')
       }
     } catch {
-      theme = 'light'
-      document.documentElement.classList.remove('dark')
+      theme = 'dark'
+      document.documentElement.classList.add('dark')
     }
     return theme
   }
