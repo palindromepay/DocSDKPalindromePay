@@ -9,11 +9,11 @@ formatTokenAmount(amount: bigint, decimals: number): string
 
 Converts a **raw token amount** (e.g. `1250000000000000000000n`) into a clean, formatted string like `"1250.00"` — perfect for UI display.
 
-Works with any ERC20 token (USDT 18-dec, BUSD 18-dec, etc.).
+Works with any ERC20 token (USDT, USDC, etc.).
 
 #### Parameters
 - `amount: bigint` – Raw token amount from contract (e.g. from `getTokenBalance`)
-- `decimals: number` – Token decimals (usually 18 for USDT/BUSD on BSC)
+- `decimals: number` – Token decimals (e.g. 6 for USDT on Base Sepolia)
 
 #### Returns
 `string` – Formatted number with proper decimal places
@@ -22,21 +22,17 @@ Works with any ERC20 token (USDT 18-dec, BUSD 18-dec, etc.).
 import { createPalindromeSDK } from '@/lib/createSDK';
 
 const { sdk } = await connectAndInitSDK();
-const USDT = "0x55d398326f99059fF775485246999027B3197955";
+const USDT = "0x337610d27c682E347C9cD60BD4b3b107C9d34dDd"; // Base Sepolia USDT
 
 try {
   const rawBalance = await sdk.getTokenBalance("0xbuyer...", USDT);
 
-  // Format with 18 decimals (standard for USDT on BSC)
-  const formatted = sdk.formatTokenAmount(rawBalance, 18);
+  // Format with 6 decimals (standard for USDT on Base Sepolia)
+  const decimals = await sdk.getTokenDecimals(USDT);
+  const formatted = sdk.formatTokenAmount(rawBalance, decimals);
 
   console.log("Buyer has:", formatted, "USDT");
   // → "Buyer has: 1250.00 USDT"
-
-  // Works with any token
-  const busdBalance = 5000000000000000000n; // 5 BUSD (18 dec)
-  console.log("BUSD:", sdk.formatTokenAmount(busdBalance, 18));
-  // → "5.00"
 
 } catch (error) {
   console.error("Error:", error);

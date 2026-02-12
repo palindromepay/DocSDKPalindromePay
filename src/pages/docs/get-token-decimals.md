@@ -20,12 +20,12 @@ import { createPalindromeSDK } from '@/lib/createSDK';
 
 const { sdk } = await connectAndInitSDK();
 
-// BSC USDT (18 decimals)
-const usdtDecimals = await sdk.getTokenDecimals("0x55d398326f99059fF775485246999027B3197955");
-console.log("USDT decimals:", usdtDecimals); // 18
+// Base Sepolia USDT
+const usdtDecimals = await sdk.getTokenDecimals("0x337610d27c682E347C9cD60BD4b3b107C9d34dDd");
+console.log("USDT decimals:", usdtDecimals);
 
-// USDC (6 decimals on some chains)
-const usdcDecimals = await sdk.getTokenDecimals("0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d");
+// USDC (6 decimals on most chains)
+const usdcDecimals = await sdk.getTokenDecimals("0xUSDC_ADDRESS...");
 console.log("USDC decimals:", usdcDecimals);
 ```
 
@@ -33,17 +33,16 @@ console.log("USDC decimals:", usdcDecimals);
 
 | Token | Chain | Decimals |
 |-------|-------|----------|
-| USDT (BSC) | BSC | 18 |
-| USDT (ETH) | Ethereum | 6 |
+| USDT | Base Sepolia | 6 |
+| USDT | Ethereum | 6 |
 | USDC | Most chains | 6 |
-| BUSD | BSC | 18 |
 | DAI | Most chains | 18 |
 | WBTC | Ethereum | 8 |
 
 #### Formatting Amounts
 
 ```ts
-const tokenAddress = "0x55d398326f99059fF775485246999027B3197955";
+const tokenAddress = "0x337610d27c682E347C9cD60BD4b3b107C9d34dDd"; // Base Sepolia USDT
 
 // Get decimals
 const decimals = await sdk.getTokenDecimals(tokenAddress);

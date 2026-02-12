@@ -6,21 +6,15 @@ description: "Palindrome Crypto Pay: Withdraw funds from an escrow wallet after 
 ```ts
 async withdraw(
   walletClient: WalletClient,
-  escrowId: bigint,
-  token: Address,
-  amount: bigint,
-  to: Address
+  escrowId: bigint
 ): Promise<Hex>
 ```
 
-Withdraws funds from an escrow wallet to a specified address. Requires proper authorization (2-of-3 multisig).
+Withdraws funds from an escrow wallet. The SDK automatically determines the token, amount, and destination based on the escrow state and caller. Requires proper authorization (2-of-3 multisig).
 
 #### Parameters
 - `walletClient: WalletClient` – Authorized signer's wallet
 - `escrowId: bigint` – The escrow ID
-- `token: Address` – Token address to withdraw (use zero address for native token)
-- `amount: bigint` – Amount to withdraw (in token's smallest unit)
-- `to: Address` – Destination address for funds
 
 #### Returns
 `Promise<Hex>` – Transaction hash
@@ -31,13 +25,7 @@ import { createPalindromeSDK } from '@/lib/createSDK';
 const { sdk, walletClient } = await connectAndInitSDK();
 
 try {
-  const txHash = await sdk.withdraw(
-    walletClient,
-    42n,
-    "0xUSDCAddress...",    // Token to withdraw
-    1000000n,              // 1 USDC (6 decimals)
-    "0xMyWallet..."        // Destination
-  );
+  const txHash = await sdk.withdraw(walletClient, 42n);
 
   console.log("Withdrawal successful!");
   console.log("Transaction:", txHash);

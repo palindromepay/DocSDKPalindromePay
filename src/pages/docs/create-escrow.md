@@ -7,7 +7,7 @@ description: "Palindrome Crypto Pay: Create a new escrow deal on-chain as the se
 async createEscrow(
   walletClient: WalletClient,
   params: CreateEscrowParams
-): Promise<{ escrowId: bigint; txHash: Hex; walletAddress: Address }>
+): Promise<{ escrowId: bigint; txHash: Hex; walletAddress: Address; signatureValid: boolean; verificationError?: string }>
 ```
 
 Creates a **new escrow** on the Palindrome contract. Must be called by the **seller** (or anyone paying gas). The buyer does **not** need to sign or pay anything at this stage.
@@ -30,6 +30,8 @@ interface CreateEscrowParams {
 - `escrowId` – The new escrow ID
 - `txHash` – Transaction hash
 - `walletAddress` – The escrow's dedicated multisig wallet address
+- `signatureValid` – Whether the wallet authorization signature was verified
+- `verificationError?` – Error message if signature verification failed
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';
@@ -39,7 +41,7 @@ const { sdk, walletClient } = await connectAndInitSDK();
 
 try {
   const result = await sdk.createEscrow(walletClient, {
-    token: "0x55d398326f99059fF775485246999027B3197955", // USDT
+    token: "0x337610d27c682E347C9cD60BD4b3b107C9d34dDd", // USDT (Base Sepolia)
     buyer: "0xbuyer123...",
     amount: parseUnits("1250", 18),        // 1250 USDT
     maturityTimeDays: 7n,                  // Auto-release after 7 days

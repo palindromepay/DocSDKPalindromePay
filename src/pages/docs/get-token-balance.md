@@ -10,7 +10,7 @@ async getTokenBalance(
 ): Promise<bigint>
 ```
 
-Reads the **raw token balance** (in wei-like units) of any wallet or contract for any ERC20 token (USDT, USDC, BUSD, etc.).
+Reads the **raw token balance** (in wei-like units) of any wallet or contract for any ERC20 token (USDT, USDC, etc.).
 
 Useful for checking buyer funds before deposit, seller payouts, or escrow contract balance.
 
@@ -25,7 +25,7 @@ Useful for checking buyer funds before deposit, seller payouts, or escrow contra
 import { createPalindromeSDK } from '@/lib/createSDK';
 
 const { sdk } = await connectAndInitSDK();
-const USDT_ADDRESS = "0x55d398326f99059fF775485246999027B3197955"; // BSC USDT
+const USDT_ADDRESS = "0x337610d27c682E347C9cD60BD4b3b107C9d34dDd"; // Base Sepolia USDT
 
 try {
   // Check buyer's USDT balance
@@ -47,12 +47,12 @@ try {
   console.log("Escrow holds:", sdk.formatTokenAmount(escrowBalance, decimals));
 
   // Works with any ERC20 token
-  const USDC_ADDRESS = "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d";
   const usdcBalance = await sdk.getTokenBalance(
     "0xbuyer123...",
-    USDC_ADDRESS
+    "0xUSDC_ADDRESS..."
   );
-  console.log("Buyer USDC:", sdk.formatTokenAmount(usdcBalance, 18));
+  const usdcDecimals = await sdk.getTokenDecimals("0xUSDC_ADDRESS...");
+  console.log("Buyer USDC:", sdk.formatTokenAmount(usdcBalance, usdcDecimals));
 
 } catch (error) {
   console.error("Failed to read balance:", error);
@@ -64,7 +64,7 @@ try {
 - Display "Funds Locked" in escrow
 - Debug token flow
 - Build wallet dashboards
-- Multi-token support (USDT, USDC, BUSD, DAI, etc.)
+- Multi-token support (USDT, USDC, DAI, etc.)
 
 #### Helper Methods
 

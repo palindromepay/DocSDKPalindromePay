@@ -51,7 +51,7 @@ try {
 {
   name: "PalindromeEscrowWallet",
   version: "1",
-  chainId: 97,  // or your chain
+  chainId: 84532,  // Base Sepolia
   verifyingContract: walletAddress
 }
 

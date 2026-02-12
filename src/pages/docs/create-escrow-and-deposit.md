@@ -7,7 +7,7 @@ description: "Palindrome Crypto Pay: Create a new escrow and deposit funds in on
 async createEscrowAndDeposit(
   walletClient: WalletClient,
   params: CreateEscrowAndDepositParams
-): Promise<{ escrowId: bigint; txHash: Hex; walletAddress: Address }>
+): Promise<{ escrowId: bigint; txHash: Hex; walletAddress: Address; signatureValid: boolean; verificationError?: string }>
 ```
 
 Creates a **new escrow** and **deposits funds** in a single transaction. Called by the **buyer** who wants to initiate a deal with a seller.
@@ -18,7 +18,7 @@ The escrow starts in `AWAITING_DELIVERY` state. The seller must call `acceptEscr
 
 ```ts
 interface CreateEscrowAndDepositParams {
-  token: Address                  // ERC20 token (USDT, BUSD, etc.)
+  token: Address                  // ERC20 token (USDT, USDC, etc.)
   seller: Address                 // Seller's wallet address
   amount: bigint                  // Amount in token decimals
   maturityTimeDays?: bigint       // Optional: auto-release after X days
@@ -32,6 +32,8 @@ interface CreateEscrowAndDepositParams {
 - `escrowId` – The new escrow ID
 - `txHash` – Transaction hash
 - `walletAddress` – The escrow's dedicated wallet address
+- `signatureValid` – Whether the wallet authorization signature was verified
+- `verificationError?` – Error message if signature verification failed
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';
@@ -41,7 +43,7 @@ const { sdk, walletClient } = await connectAndInitSDK(); // buyer's wallet
 
 try {
   const result = await sdk.createEscrowAndDeposit(walletClient, {
-    token: "0x55d398326f99059fF775485246999027B3197955", // USDT
+    token: "0x337610d27c682E347C9cD60BD4b3b107C9d34dDd", // USDT (Base Sepolia)
     seller: "0xseller123...",
     amount: parseUnits("500", 18),       // 500 USDT
     maturityTimeDays: 14n,               // Auto-release after 14 days

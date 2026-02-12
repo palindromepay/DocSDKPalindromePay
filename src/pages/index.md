@@ -54,7 +54,7 @@ npm install @palindromepay/sdk
   Create a .env file
 
 ```js
-REACT_APP_USDT_TOKEN=0x337610d27c682E347C9cD60BD4b3b107C9d34dDd //this is USDT Faucet on BSC-Testnet 
+REACT_APP_USDT_TOKEN=0x337610d27c682E347C9cD60BD4b3b107C9d34dDd //this is USDT Faucet on Base Sepolia 
 ```
 {% /callout %}
 

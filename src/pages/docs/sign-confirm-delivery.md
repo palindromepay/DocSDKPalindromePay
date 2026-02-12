@@ -62,7 +62,7 @@ try {
 {
   name: "PalindromeCryptoEscrow",
   version: "1",
-  chainId: 97,
+  chainId: 84532,  // Base Sepolia
   verifyingContract: contractAddress
 }
 

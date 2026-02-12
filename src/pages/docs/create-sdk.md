@@ -12,10 +12,10 @@ Public Client (on-chain reads)
 ```ts
 // config/viem.ts
 import { createPublicClient, http } from 'viem';
-import { bscTestnet } from 'viem/chains';
+import { baseSepolia } from 'viem/chains';
 
 export const publicClient = createPublicClient({
-  chain: bscTestnet,
+  chain: baseSepolia,
   transport: http(),
 });
 ```
@@ -27,14 +27,14 @@ import { PalindromePaySDK } from '@palindromepay/sdk';
 import { WalletClient } from 'viem';
 import { publicClient } from '@/config/viem';
 import { apolloClient } from '@/config/apollo';
-import { bscTestnet } from 'viem/chains';
+import { baseSepolia } from 'viem/chains';
 
 export const createPalindromeSDK = (walletClient?: WalletClient) => {
   return new PalindromePaySDK({
     publicClient,
     walletClient: walletClient ?? undefined,
     apolloClient,
-    chain: bscTestnet,
+    chain: baseSepolia,
   });
 };
 ```
@@ -43,18 +43,18 @@ Connect Wallet & Instantiate SDK
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';
 import { createWalletClient, custom } from 'viem';
-import { bscTestnet } from 'viem/chains';
+import { baseSepolia } from 'viem/chains';
 
 export const connectAndInitSDK = async () => {
   if (!window.ethereum) throw new Error('MetaMask not detected');
 
   const walletClient = createWalletClient({
-    chain: bscTestnet,
+    chain: baseSepolia,
     transport: custom(window.ethereum),
   });
 
   const [address] = await walletClient.requestAddresses();
-  await walletClient.switchChain({ id: bscTestnet.id });
+  await walletClient.switchChain({ id: baseSepolia.id });
 
   const sdk = createPalindromeSDK(walletClient);
 

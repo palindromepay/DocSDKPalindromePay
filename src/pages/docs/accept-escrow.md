@@ -4,7 +4,7 @@ description: "Palindrome Crypto Pay: Seller accepts a buyer-created escrow and p
 ---
 
 ```ts
-async acceptEscrow(walletClient: WalletClient, escrowId: bigint): Promise<Hex>
+async acceptEscrow(walletClient: WalletClient, escrowId: bigint): Promise<{ txHash: Hex; signatureValid: boolean }>
 ```
 
 **Called by the seller** when the buyer created the escrow via `createEscrowAndDeposit()`. The seller must accept to provide their wallet authorization signature, which is required for the 2-of-3 multisig withdrawal mechanism.
@@ -16,7 +16,7 @@ Without accepting, the seller cannot receive funds even if the buyer confirms de
 - `escrowId: bigint` – The escrow ID to accept
 
 #### Returns
-`Promise<Hex>` – Transaction hash
+`Promise<{ txHash: Hex; signatureValid: boolean }>` – Transaction hash and signature verification result
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';
@@ -24,11 +24,12 @@ import { createPalindromeSDK } from '@/lib/createSDK';
 const { sdk, walletClient } = await connectAndInitSDK(); // walletClient = seller
 
 try {
-  const txHash = await sdk.acceptEscrow(walletClient, 42n);
+  const { txHash, signatureValid } = await sdk.acceptEscrow(walletClient, 42n);
 
   console.log("Escrow accepted!");
   console.log("You can now receive funds when buyer confirms delivery");
   console.log("Transaction:", txHash);
+  console.log("Signature valid:", signatureValid);
 
   // Your wallet signature is now registered
   // When buyer confirms, funds will be released to you

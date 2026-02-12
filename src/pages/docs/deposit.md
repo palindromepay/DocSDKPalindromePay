@@ -4,7 +4,7 @@ description: "Palindrome Crypto Pay: Buyer deposits funds into the escrow. Autom
 ---
 
 ```ts
-async deposit(walletClient: WalletClient, escrowId: bigint): Promise<Hex>
+async deposit(walletClient: WalletClient, escrowId: bigint): Promise<{ txHash: Hex; signatureValid: boolean }>
 ```
 
 **Called by the buyer** to lock the agreed amount of tokens into the escrow contract.
@@ -20,7 +20,7 @@ The SDK does everything for you:
 - `escrowId: bigint` – The escrow ID
 
 #### Returns
-`Promise<Hex>` – Transaction hash
+`Promise<{ txHash: Hex; signatureValid: boolean }>` – Transaction hash and signature verification result
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';
@@ -28,10 +28,11 @@ import { createPalindromeSDK } from '@/lib/createSDK';
 const { sdk, walletClient } = await connectAndInitSDK(); // walletClient = buyer's wallet
 
 try {
-  const txHash = await sdk.deposit(walletClient, 42n);
+  const { txHash, signatureValid } = await sdk.deposit(walletClient, 42n);
 
   console.log("Deposit successful!");
   console.log("Transaction:", txHash);
+  console.log("Signature valid:", signatureValid);
   console.log("Funds are now locked in escrow #42");
 
   // Escrow state → AWAITING_DELIVERY

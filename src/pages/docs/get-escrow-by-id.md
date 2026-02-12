@@ -26,7 +26,7 @@ try {
   console.log('Raw escrow data from contract:', rawEscrow);
   // Example output:
   // [
-  //   "0x55d398326f99059fF775485246999027B3197955", // token (e.g., USDT)
+  //   "0x337610d27c682E347C9cD60BD4b3b107C9d34dDd", // token (e.g., USDT on Base Sepolia)
   //   "0xbuyer...",                                 // buyer
   //   "0xseller...",                                // seller
   //   "0x0000000000000000000000000000000000000000", // arbiter (none)
