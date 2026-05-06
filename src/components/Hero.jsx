@@ -39,11 +39,18 @@ export function Hero() {
             <img
               className="absolute bottom-full right-full -mb-56 -mr-72 opacity-50"
               src={blurCyanImage.src}
-              alt=""
+              alt="Crypto escrow payment platform background"
               width={530}
               height={530}
             />
             <div className="relative">
+              <p className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
+                Palindrome Crypto Pay SDK
+              </p>
+
+              <h2 className="mt-3 text-2xl tracking-tight text-slate-400">
+                With Built-in Escrow Service
+              </h2>
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
                 <Button href="#quick-start">Get started</Button>
                 {/* <Button
