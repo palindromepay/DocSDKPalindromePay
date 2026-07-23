@@ -24,7 +24,7 @@ Signs an EIP-712 typed message for gasless confirm delivery. The buyer signs off
 `Promise<Hex>` – 65-byte EIP-712 signature
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk, walletClient } = await connectAndInitSDK(); // buyer
 
@@ -57,12 +57,12 @@ try {
 
 #### Signature Structure (EIP-712)
 
-```typescript
+```ts
 // Domain
 {
-  name: "PalindromeCryptoEscrow",
+  name: "PalindromePay",
   version: "1",
-  chainId: 84532,  // Base Sepolia
+  chainId: 84532,  // chain-dependent: 8453 Base mainnet, 84532 Base Sepolia
   verifyingContract: contractAddress
 }
 
@@ -84,12 +84,23 @@ try {
 
 #### Full Gasless Flow
 
+{% callout %}
+Prefer [`prepareConfirmDeliverySigned()`](/docs/prepare-confirm-delivery-signed) — it fetches the nonce, creates the deadline, and produces both signatures in a single call.
+{% /callout %}
+
 ```ts
+import { EscrowState } from '@palindromepay/sdk';
+
 // 1. Buyer signs (no gas)
 const nonce = await sdk.getUserNonce(escrowId, buyerAddress);
 const deadline = await sdk.createSignatureDeadline(60);
 const coordSig = await sdk.signConfirmDelivery(walletClient, escrowId, deadline, nonce);
-const walletSig = await sdk.signWalletAuthorization(walletClient, escrowWallet, escrowId);
+const walletSig = await sdk.signWalletAuthorization(
+  walletClient,
+  escrowWallet,
+  escrowId,
+  EscrowState.COMPLETE
+);
 
 // 2. Send signatures to backend
 await sendToRelayer({ escrowId, coordSig, walletSig, deadline, nonce });

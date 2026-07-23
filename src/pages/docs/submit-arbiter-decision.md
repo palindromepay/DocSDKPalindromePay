@@ -26,7 +26,7 @@ This is the **final step** in a dispute — it permanently resolves the escrow a
 `Promise<Hex>` – Transaction hash
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 import { DisputeResolution } from '@palindromepay/sdk';
 
 const { sdk, walletClient: arbiterWallet } = await connectAndInitSDK();
@@ -64,6 +64,8 @@ try {
 | `DisputeResolution.Complete`   | Seller            | Yes (1%)      | `COMPLETE`    |
 | `DisputeResolution.Refunded`   | Buyer (full)      | No            | `REFUNDED`    |
 
+If the escrow has an `arbiterFeeBps` set (see [`createEscrow()`](/docs/create-escrow)), the arbiter's fee is paid out when they resolve the dispute.
+
 #### Best Practice for Arbiter Ruling (IPFS)
 Upload a clear JSON:
 ```json
@@ -76,4 +78,5 @@ Upload a clear JSON:
 }
 ```
 
+**See also** → [`submitDisputeMessage()`](/docs/submit-dispute-message) · [`refundAfterDisputeTimeout()`](/docs/refund-after-dispute-timeout) · [`getDisputeSubmissionStatus()`](/docs/get-dispute-submission-status)
 

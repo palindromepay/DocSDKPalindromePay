@@ -16,7 +16,8 @@ None
 `Promise<bigint>` – The next escrow ID
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
+import { EscrowState } from '@palindromepay/sdk';
 
 const { sdk } = await connectAndInitSDK();
 
@@ -40,7 +41,7 @@ console.log("Future escrow wallet:", walletAddress);
 ```ts
 const nextId = await sdk.getNextEscrowId();
 const predictedWallet = await sdk.predictWalletAddress(nextId);
-const sig = await sdk.signWalletAuthorization(walletClient, predictedWallet, nextId);
+const sig = await sdk.signWalletAuthorization(walletClient, predictedWallet, nextId, EscrowState.COMPLETE);
 ```
 
 **3. Track total escrows created:**

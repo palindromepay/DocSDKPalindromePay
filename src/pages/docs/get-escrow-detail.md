@@ -1,13 +1,13 @@
 ---
 title: getEscrowDetail
-description: "Palindrome Crypto Pay: Fetch detailed escrow data from the subgraph including all related information, dispute history, and transaction events."
+description: "Palindrome Crypto Pay: Fetch detailed escrow data from the subgraph including all related information and dispute history."
 ---
 
 ```ts
 async getEscrowDetail(escrowId: string): Promise<EscrowDetail | null>
 ```
 
-Queries the subgraph to retrieve comprehensive details about a specific escrow, including dispute messages and transaction history.
+Queries the subgraph to retrieve comprehensive details about a specific escrow, including dispute messages.
 
 #### Parameters
 - `escrowId: string` – The escrow ID to fetch
@@ -16,7 +16,7 @@ Queries the subgraph to retrieve comprehensive details about a specific escrow, 
 `Promise<EscrowDetail | null>` – Detailed escrow object or null if not found
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk } = await connectAndInitSDK();
 
@@ -41,7 +41,6 @@ if (detail) {
 #### Use Cases
 - Display full escrow details page
 - Review dispute history and evidence
-- Audit transaction timeline
 
 #### Related Methods
 - [`getEscrowById()`](/docs/get-escrow-by-id) – Get raw on-chain data

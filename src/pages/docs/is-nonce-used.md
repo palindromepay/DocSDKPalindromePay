@@ -22,7 +22,7 @@ Checks whether a specific nonce has already been used by a signer for a particul
 `Promise<boolean>` – `true` if nonce is used, `false` if available
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk, walletClient } = await connectAndInitSDK();
 

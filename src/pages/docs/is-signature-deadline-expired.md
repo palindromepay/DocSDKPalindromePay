@@ -17,7 +17,7 @@ Checks whether a signature deadline has expired. Includes a safety buffer to avo
 `boolean` – `true` if deadline has passed (signature invalid), `false` if still valid
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk } = await connectAndInitSDK();
 

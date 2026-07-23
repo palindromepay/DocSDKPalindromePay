@@ -21,6 +21,7 @@ interface CreateEscrowParams {
   amount: bigint                  // Amount in token decimals (e.g. 1000 USDT = 1000000000n)
   maturityTimeDays?: bigint       // Optional: auto-release after X days (0 = no auto-release)
   arbiter?: Address               // Optional: dispute resolver (default = zero address)
+  arbiterFeeBps?: number          // Optional: arbiter fee in basis points, 0-2000 (max 20%); must be 0 without an arbiter
   title: string                   // Deal title (shown in UI)
   ipfsHash?: string               // Optional: IPFS hash of description/images
 }
@@ -34,7 +35,7 @@ interface CreateEscrowParams {
 - `verificationError?` – Error message if signature verification failed
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 import { parseUnits } from 'viem';
 
 const { sdk, walletClient } = await connectAndInitSDK();
@@ -59,3 +60,20 @@ try {
   console.error("Failed to create escrow:", error.shortMessage || error.message);
 }
 ```
+
+#### With an arbiter and arbiter fee
+
+If you set an arbiter, you can grant them a fee (paid only when the arbiter resolves a dispute). The fee is expressed in basis points; the exported constant `MAX_ARBITER_FEE_BPS` (2000 = 20%) is the upper bound.
+
+```ts
+const result = await sdk.createEscrow(walletClient, {
+  token: "0x337610d27c682E347C9cD60BD4b3b107C9d34dDd", // USDT (Base Sepolia)
+  buyer: "0xbuyer123...",
+  amount: parseUnits("1250", 18),
+  arbiter: "0xarbiter456...",
+  arbiterFeeBps: 250, // 2.5% fee for the arbiter on dispute resolution
+  title: "Brand New iPhone 15 Pro Max 512GB",
+});
+```
+
+**See also** → [`createEscrowAndDeposit()`](/docs/create-escrow-and-deposit) · [`deposit()`](/docs/deposit) · [`setArbiterSigned()`](/docs/set-arbiter-signed)

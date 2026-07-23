@@ -16,7 +16,7 @@ Reads the `decimals()` value from an ERC20 token contract. Results are cached to
 `Promise<number>` – Number of decimal places (usually 18, 6, or 8)
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk } = await connectAndInitSDK();
 

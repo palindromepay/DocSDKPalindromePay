@@ -16,7 +16,7 @@ Creates a deadline timestamp for EIP-712 signatures. Uses the current block time
 `Promise<bigint>` – Unix timestamp when signature expires
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk } = await connectAndInitSDK();
 

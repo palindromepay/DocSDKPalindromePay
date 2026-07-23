@@ -30,7 +30,7 @@ Perfect for **zero-gas UX** where users don't need native tokens to initiate dis
 #### Full Flow
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk, walletClient } = await connectAndInitSDK();
 const escrowId = 42n;
@@ -109,7 +109,7 @@ const isValid = !sdk.isSignatureDeadlineExpired(deadline);
 
 The signed message follows this structure:
 
-```typescript
+```ts
 {
   escrowId: bigint;
   buyer: Address;

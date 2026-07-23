@@ -20,7 +20,7 @@ Withdraws funds from an escrow wallet. The SDK automatically determines the toke
 `Promise<Hex>` – Transaction hash
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk, walletClient } = await connectAndInitSDK();
 

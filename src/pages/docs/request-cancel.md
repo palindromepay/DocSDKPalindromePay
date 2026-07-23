@@ -22,7 +22,7 @@ This is the first step in **mutual cancellation**.
 `Promise<Hex>` – Transaction hash
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk, walletClient } = await connectAndInitSDK();
 

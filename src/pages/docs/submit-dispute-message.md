@@ -26,7 +26,7 @@ Each participant can submit **only once**.
 `Promise<Hex>` – Transaction hash
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 import { Role } from '@palindromepay/sdk';
 
 const { sdk, walletClient } = await connectAndInitSDK(); // walletClient = buyer or seller

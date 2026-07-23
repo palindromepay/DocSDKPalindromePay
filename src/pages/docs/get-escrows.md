@@ -16,7 +16,7 @@ None
 `Promise<Escrow[]>` – Array of all escrow objects
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk } = await connectAndInitSDK();
 

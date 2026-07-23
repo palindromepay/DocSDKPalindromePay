@@ -19,7 +19,8 @@ Perfect for deals with a delivery deadline — if the buyer doesn't confirm or d
 `Promise<Hex>` – Transaction hash
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
+import { EscrowState } from '@palindromepay/sdk';
 
 const { sdk, walletClient } = await connectAndInitSDK();
 

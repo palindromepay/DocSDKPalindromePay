@@ -22,7 +22,7 @@ Retrieves multiple available nonces in a single call. Useful for batch signing o
 `Promise<bigint[]>` – Array of available nonces
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk, walletClient } = await connectAndInitSDK();
 

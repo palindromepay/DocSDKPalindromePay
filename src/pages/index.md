@@ -9,7 +9,7 @@ description: Add crypto payments + escrow to Shopify, real estate, or booking ap
 The Palindrome Pay SDK enables developers to integrate crypto payments into applications using open-source smart contracts with built-in escrow and multisig wallet support.
 
 - **Non-custodial**: Funds are held by the smart contract, not by Palindrome Pay
-- **User-to-user**: Direct peer-to-peer transactions between buyer and seller
+- **Escrow-secured**: Funds move between buyer and seller through the escrow smart contract, released only when the agreed conditions are met
 - **Software fee**: A 1% fee applies for SDK usage, charged only on successful deals
 
 ---
@@ -42,21 +42,30 @@ This enables businesses to benefit from secure, transparent transactions for a w
 
 Do you want to start right away? Then install Palindrome Crypto Pay with a command line.
 
+These docs target `@palindromepay/sdk` **v3.x** (currently 3.0.4).
+
 ### Installing dependencies
 
 The SDK is written in **TypeScript** and can be imported into React, Vue and Angular application.
 
-```typescript
+```bash
 npm install @palindromepay/sdk
 ```
 
 {% callout title="You should do!" %}
-  Create a .env file
+  Create a .env file with the token address you want to accept (use the prefix your framework requires, e.g. `NEXT_PUBLIC_`, `VITE_`, or `REACT_APP_`):
 
-```js
-REACT_APP_USDT_TOKEN=0x337610d27c682E347C9cD60BD4b3b107C9d34dDd //this is USDT Faucet on Base Sepolia 
+```bash
+# USDT Faucet on Base Sepolia
+USDT_TOKEN=0x337610d27c682E347C9cD60BD4b3b107C9d34dDd
 ```
 {% /callout %}
+
+### First steps
+
+1. [Create the SDK instance](/docs/create-sdk) — set up viem + Apollo clients with `testnet: true`
+2. [Create an escrow](/docs/create-escrow) and [deposit](/docs/deposit) funds as the buyer
+3. [Confirm delivery](/docs/confirm-delivery) to release funds, then the seller can [withdraw](/docs/withdraw)
 
 
 ## Palindrome Pay Button
@@ -147,9 +156,7 @@ Place this in product.liquid or a product section:
   data-palindrome-endpoint="https://palindromepay.com/crypto-pay" 
   defer
 ></script>
-
-
-````
+```
 
 ---
 

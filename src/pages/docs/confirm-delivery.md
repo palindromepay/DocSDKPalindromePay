@@ -19,7 +19,7 @@ This instantly releases the escrowed funds (minus fee) to the seller and marks t
 `Promise<Hex>` – Transaction hash
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk, walletClient } = await connectAndInitSDK(); // walletClient = buyer
 

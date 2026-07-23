@@ -2,253 +2,277 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sdk.palindromepay.com/</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/accept-escrow</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/approve-token-if-needed</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/auto-release</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/cancel-by-timeout</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/confirm-delivery-signed</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/confirm-delivery</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/create-escrow-and-deposit</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/create-escrow</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/create-sdk</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/create-signature-deadline</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/deposit</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/enums</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/format-token-amount</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/get-dispute-messages</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/get-dispute-submission-status</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/get-escrow-by-id-parsed</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/get-escrow-by-id</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/get-escrow-detail</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/get-escrows-by-buyer</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/get-escrows-by-seller</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/get-escrows</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/get-multiple-nonces</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/get-next-escrow-id</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/get-nonce-bitmap</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/get-token-allowance</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/get-token-balance</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/get-token-decimals</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/get-user-nonce</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/has-submitted-evidence</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/is-nonce-used</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/is-signature-deadline-expired</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/predict-wallet-address</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sdk.palindromepay.com/docs/prepare-confirm-delivery-signed</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sdk.palindromepay.com/docs/refund-after-dispute-timeout</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/request-cancel</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sdk.palindromepay.com/docs/set-arbiter-signed</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/sign-confirm-delivery</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sdk.palindromepay.com/docs/sign-set-arbiter</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/sign-start-dispute</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/sign-wallet-authorization</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/start-dispute-signed</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/start-dispute</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/submit-arbiter-decision</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/submit-dispute-message</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sdk.palindromepay.com/docs/withdraw</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -16,7 +16,7 @@ Fetches the raw escrow tuple straight from the contract's getEscrow(uint256) vie
 Raw array/tuple with values in contract order (token, buyer, seller, arbiter, amount, depositTime, maturityTime, nonce, state, buyerCancelRequested, sellerCancelRequested)
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk } = await connectAndInitSDK();
 

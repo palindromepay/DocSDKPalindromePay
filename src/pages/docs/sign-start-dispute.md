@@ -24,7 +24,7 @@ Signs an EIP-712 typed message for gasless dispute initiation. The buyer or sell
 `Promise<Hex>` – 65-byte EIP-712 signature
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk, walletClient } = await connectAndInitSDK();
 
@@ -65,12 +65,12 @@ try {
 
 #### Signature Structure (EIP-712)
 
-```typescript
+```ts
 // Domain
 {
-  name: "PalindromeCryptoEscrow",
+  name: "PalindromePay",
   version: "1",
-  chainId: 84532,  // Base Sepolia
+  chainId: 84532,  // chain-dependent: 8453 Base mainnet, 84532 Base Sepolia
   verifyingContract: contractAddress
 }
 

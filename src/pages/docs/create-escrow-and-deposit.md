@@ -23,6 +23,7 @@ interface CreateEscrowAndDepositParams {
   amount: bigint                  // Amount in token decimals
   maturityTimeDays?: bigint       // Optional: auto-release after X days
   arbiter?: Address               // Optional: dispute resolver
+  arbiterFeeBps?: number          // Optional: arbiter fee in basis points, 0-2000 (max 20%); must be 0 without an arbiter
   title: string                   // Deal title (1-256 chars)
   ipfsHash?: string               // Optional: IPFS hash for description
 }
@@ -36,7 +37,7 @@ interface CreateEscrowAndDepositParams {
 - `verificationError?` – Error message if signature verification failed
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 import { parseUnits } from 'viem';
 
 const { sdk, walletClient } = await connectAndInitSDK(); // buyer's wallet
@@ -48,6 +49,7 @@ try {
     amount: parseUnits("500", 18),       // 500 USDT
     maturityTimeDays: 14n,               // Auto-release after 14 days
     arbiter: "0xarbiter456...",          // Optional dispute resolver
+    arbiterFeeBps: 250,                  // 2.5% arbiter fee (0-2000 bps, only with arbiter)
     title: "MacBook Pro M3 Max - New",
     ipfsHash: "QmXyz...",                // Description on IPFS
   });
@@ -95,6 +97,7 @@ The SDK validates:
 - Token address is valid ERC20
 - Seller address is valid
 - Arbiter is not buyer or seller
+- Arbiter fee is 0-2000 bps and 0 when no arbiter is set
 - Amount > 0
 - Title is 1-256 characters
 - Sufficient token balance

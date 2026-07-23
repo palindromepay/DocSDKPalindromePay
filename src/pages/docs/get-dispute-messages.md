@@ -16,7 +16,7 @@ Queries the subgraph to retrieve all dispute messages and evidence submissions f
 `Promise<DisputeMessage[]>` – Array of dispute message objects
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk } = await connectAndInitSDK();
 

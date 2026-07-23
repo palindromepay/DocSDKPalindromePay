@@ -16,7 +16,7 @@ Queries the subgraph to retrieve all escrows where the given address is the **bu
 `Promise<Escrow[]>` – Array of escrow objects
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk } = await connectAndInitSDK();
 

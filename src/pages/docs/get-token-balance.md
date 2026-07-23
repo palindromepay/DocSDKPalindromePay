@@ -22,7 +22,7 @@ Useful for checking buyer funds before deposit, seller payouts, or escrow contra
 `Promise<bigint>` – Balance as bigint (e.g. `1250000000000000000000n` for tokens with 18 decimals)
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk } = await connectAndInitSDK();
 const USDT_ADDRESS = "0x337610d27c682E347C9cD60BD4b3b107C9d34dDd"; // Base Sepolia USDT

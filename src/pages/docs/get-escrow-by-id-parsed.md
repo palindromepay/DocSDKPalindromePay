@@ -13,7 +13,7 @@ Same as `getEscrowById()` but automatically converts the raw on-chain tuple into
 `Promise<EscrowData>` – Structured escrow object
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk } = await connectAndInitSDK();
 
@@ -47,12 +47,19 @@ try {
   buyer: "0xbuyer...",
   seller: "0xseller...",
   arbiter: "0x0000000000000000000000000000000000000000",
+  wallet: "0xEscrowWallet...",
   amount: 1250000000n,
   depositTime: 1719823500n,
   maturityTime: 1720428300n,
-  nonce: 1n,
+  maturityDuration: 604800n,         // maturity window in seconds
+  disputeStartTime: 0n,
   state: 1,                          // EscrowState.AWAITING_DELIVERY
   buyerCancelRequested: false,
-  sellerCancelRequested: false
+  sellerCancelRequested: false,
+  tokenDecimals: 6,
+  arbiterFeeBps: 0,                  // arbiter fee in basis points (0-2000)
+  sellerWalletSig: "0x...",
+  buyerWalletSig: "0x...",
+  arbiterWalletSig: "0x..."
 }
 ```

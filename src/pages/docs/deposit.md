@@ -23,7 +23,7 @@ The SDK does everything for you:
 `Promise<{ txHash: Hex; signatureValid: boolean }>` – Transaction hash and signature verification result
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk, walletClient } = await connectAndInitSDK(); // walletClient = buyer's wallet
 
@@ -49,3 +49,8 @@ try {
 }
 ```
 
+{% callout type="warning" title="Expired escrows cannot be funded" %}
+If the escrow's maturity time has already passed, `deposit()` fails fast with an `SDKError` ("Escrow expired - maturity time has passed") before sending any transaction. On success, the contract re-anchors the maturity window at deposit time.
+{% /callout %}
+
+**See also** → [`createEscrowAndDeposit()`](/docs/create-escrow-and-deposit) · [`acceptEscrow()`](/docs/accept-escrow)

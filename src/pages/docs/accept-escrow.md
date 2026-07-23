@@ -19,7 +19,7 @@ Without accepting, the seller cannot receive funds even if the buyer confirms de
 `Promise<{ txHash: Hex; signatureValid: boolean }>` – Transaction hash and signature verification result
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk, walletClient } = await connectAndInitSDK(); // walletClient = seller
 

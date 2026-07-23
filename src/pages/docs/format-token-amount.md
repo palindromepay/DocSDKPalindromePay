@@ -19,7 +19,7 @@ Works with any ERC20 token (USDT, USDC, etc.).
 `string` – Formatted number with proper decimal places
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk } = await connectAndInitSDK();
 const USDT = "0x337610d27c682E347C9cD60BD4b3b107C9d34dDd"; // Base Sepolia USDT

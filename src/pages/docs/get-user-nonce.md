@@ -19,7 +19,7 @@ Nonces prevent replay attacks — each signature can only be used once.
 `Promise<bigint>` – The next available nonce
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk, walletClient } = await connectAndInitSDK();
 

@@ -18,7 +18,8 @@ This is useful for pre-signing wallet authorizations before the escrow exists.
 `Promise<Address>` – The predicted wallet address
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { createPalindromeSDK, connectAndInitSDK } from '@/lib/createSDK';
+import { EscrowState } from '@palindromepay/sdk';
 
 const { sdk } = await connectAndInitSDK();
 
@@ -30,8 +31,8 @@ console.log("Next escrow ID:", nextId);
 const walletAddress = await sdk.predictWalletAddress(nextId);
 console.log("Predicted wallet:", walletAddress);
 
-// Now you can pre-sign the wallet authorization
-const sig = await sdk.signWalletAuthorization(walletClient, walletAddress, nextId);
+// Now you can pre-sign the wallet authorization (bound to one outcome)
+const sig = await sdk.signWalletAuthorization(walletClient, walletAddress, nextId, EscrowState.COMPLETE);
 ```
 
 #### How CREATE2 Works
@@ -61,11 +62,12 @@ async function createEscrowWithPreSign(walletClient: WalletClient, params: Creat
   const nextId = await sdk.getNextEscrowId();
   const predictedWallet = await sdk.predictWalletAddress(nextId);
 
-  // Step 2: Pre-sign wallet authorization
+  // Step 2: Pre-sign wallet authorization (bound to the COMPLETE outcome)
   const sellerWalletSig = await sdk.signWalletAuthorization(
     walletClient,
     predictedWallet,
-    nextId
+    nextId,
+    EscrowState.COMPLETE
   );
 
   // Step 3: Create escrow (SDK does this internally)

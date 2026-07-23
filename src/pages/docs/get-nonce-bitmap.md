@@ -24,7 +24,7 @@ This is a low-level function — most users should use `getUserNonce()` instead.
 `Promise<bigint>` – 256-bit bitmap where each bit represents a nonce's used status
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk, walletClient } = await connectAndInitSDK();
 

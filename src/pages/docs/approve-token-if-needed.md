@@ -26,7 +26,7 @@ This is used internally by `deposit()` and `createEscrowAndDeposit()`, but you c
 `Promise<Hex | null>` – Transaction hash if approval was sent, `null` if already approved
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk, walletClient } = await connectAndInitSDK();
 

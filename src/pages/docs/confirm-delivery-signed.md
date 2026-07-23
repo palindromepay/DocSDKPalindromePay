@@ -32,7 +32,8 @@ Perfect for mobile users, dApp UX, or reducing buyer friction.
 #### Full Flow
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
+import { EscrowState } from '@palindromepay/sdk';
 
 const { sdk, walletClient } = await connectAndInitSDK(); // walletClient = buyer
 
@@ -55,11 +56,12 @@ try {
     nonce
   );
 
-  // Step 4: Sign wallet authorization
+  // Step 4: Sign wallet authorization (bound to the COMPLETE outcome)
   const buyerWalletSig = await sdk.signWalletAuthorization(
     walletClient,
     escrow.wallet,
-    escrowId
+    escrowId,
+    EscrowState.COMPLETE
   );
 
   // Step 5: Submit on-chain (can be same wallet or relayer)
@@ -109,11 +111,12 @@ const coordSignature = await sdk.signConfirmDelivery(
   nonce
 );
 
-// Sign wallet authorization
+// Sign wallet authorization (bound to the COMPLETE outcome)
 const buyerWalletSig = await sdk.signWalletAuthorization(
   walletClient,
   escrow.wallet,
-  escrowId
+  escrowId,
+  EscrowState.COMPLETE
 );
 
 // Submit (can be done later by relayer)
@@ -135,7 +138,7 @@ const escrow = await sdk.getEscrowByIdParsed(escrowId);
 const nonce = await sdk.getUserNonce(escrowId, buyerAddress);
 const deadline = await sdk.createSignatureDeadline(60);
 const coordSignature = await sdk.signConfirmDelivery(walletClient, escrowId, deadline, nonce);
-const buyerWalletSig = await sdk.signWalletAuthorization(walletClient, escrow.wallet, escrowId);
+const buyerWalletSig = await sdk.signWalletAuthorization(walletClient, escrow.wallet, escrowId, EscrowState.COMPLETE);
 
 // Send to backend
 await fetch('/api/relay-confirm', {

@@ -22,7 +22,7 @@ Reads the ERC20 `allowance()` to check how much a spender is approved to transfe
 `Promise<bigint>` – The approved amount (in token's smallest unit)
 
 ```ts
-import { createPalindromeSDK } from '@/lib/createSDK';
+import { connectAndInitSDK } from '@/lib/createSDK';
 
 const { sdk, walletClient } = await connectAndInitSDK();
 
